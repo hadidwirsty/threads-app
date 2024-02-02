@@ -6,6 +6,8 @@ import {
   HiOutlineLogin,
   HiOutlineUser,
 } from "react-icons/hi";
+
+import { asyncIsLoadingProcess } from "../../../helpers/is-loading/action";
 import NavItem from "./nav-item";
 
 const LayoutNavBar = () => {
@@ -13,7 +15,7 @@ const LayoutNavBar = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(asyncPreloadProcess());
+    dispatch(asyncIsLoadingProcess());
   }, [dispatch]);
 
   return (
