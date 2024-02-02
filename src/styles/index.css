@@ -35,7 +35,7 @@
 }
 
 @layer utilities {
-  .header { @apply px-12 sm:px-24 md:px-52 lg:px-64 xl:px-80; }
+  .x-container { @apply px-12 sm:px-24 md:px-52 lg:px-64 xl:px-80; }
 
   .x-fluid-container { @apply px-8 sm:px-12 md:px-16 lg:px-24 xl:px-36; }
 

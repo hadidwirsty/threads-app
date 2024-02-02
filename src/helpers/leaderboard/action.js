@@ -1,12 +1,12 @@
 import ActionType from "../actionTypes";
 
-function leaderboardActionCreator(leaderboard) {
+function receiveLeaderboardActionCreator(leaderboard) {
   return {
-    type: ActionType.LEADERBOARD,
+    type: ActionType.RECEIVE_LEADERBOARD,
     payload: {
       leaderboard,
     },
   };
 }
 
-export { leaderboardActionCreator };
+export { receiveLeaderboardActionCreator };

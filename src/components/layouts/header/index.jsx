@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const LayoutHeader = ({ withBackButton = false }) => {
   return (
-    <header className="header fixed top-0 z-30 flex w-full items-center gap-x-6 border-b-2 border-dark bg-light py-3">
+    <header className="x-container fixed top-0 z-30 flex w-full items-center gap-x-6 border-b-2 border-dark bg-light py-3">
       {withBackButton && (
         <Link to="/" title="Back to Home">
           <HiArrowLeft className="text-2xl" />

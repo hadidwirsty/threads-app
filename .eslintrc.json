@@ -33,7 +33,6 @@
         "no-return-await": "off",
         "no-underscore-dangle": "off",
         "no-use-before-define": "off",
-        "react/button-has-type": "off",
         "react/function-component-definition": "off",
         "react-hooks/exhaustive-deps": "warn",
         "react-hooks/rules-of-hooks": "error",

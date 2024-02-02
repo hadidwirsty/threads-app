@@ -1,9 +1,9 @@
-import api from "../api/api";
 import ActionType from "../actionTypes";
+import api from "../api";
 
-function userActionCreator(users) {
+function receiveUsersActionCreator(users) {
   return {
-    type: ActionType.USERS,
+    type: ActionType.RECEIVE_USERS,
     payload: {
       users,
     },
@@ -20,4 +20,4 @@ function asyncRegisterUser({ name, email, password }) {
   };
 }
 
-export { userActionCreator, asyncRegisterUser };
+export { receiveUsersActionCreator, asyncRegisterUser };

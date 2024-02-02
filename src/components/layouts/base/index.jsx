@@ -1,16 +1,16 @@
 import PropTypes from "prop-types";
 
-import Header from "./Header";
-import Navbar from "./Navbar";
+import LayoutHeader from "../header";
+import LayoutNavbar from "../navbar";
 
 const LayoutBase = ({ withBackButton, isFluidContainer = false, children }) => {
   const containerClass = isFluidContainer ? "x-fluid-container" : "x-container";
 
   return (
     <>
-      <Header withBackButton={withBackButton} />
+      <LayoutHeader withBackButton={withBackButton} />
 
-      <Navbar />
+      <LayoutNavbar />
 
       <main className={`${containerClass} pb-32 pt-24`}>{children}</main>
     </>

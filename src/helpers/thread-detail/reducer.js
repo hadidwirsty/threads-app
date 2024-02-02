@@ -2,7 +2,7 @@ import ActionType from "../actionTypes";
 
 function threadDetailReducer(threadDetail = {}, action = {}) {
   switch (action.type) {
-    case ActionType.THREAD_DETAIL:
+    case ActionType.RECEIVE_THREAD_DETAIL:
       return action?.payload?.threadDetail;
     case ActionType.CLEAR_THREAD_DETAIL:
       return {};

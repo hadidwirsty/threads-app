@@ -1,48 +1,48 @@
-import api from "../api/api";
 import ActionType from "../actionTypes";
+import api from "../api";
 
-function setAuthActionCreator(authUser) {
+function setAuthUserActionCreator(authUser) {
   return {
-    type: ActionType.SET_AUTH,
+    type: ActionType.SET_AUTH_USER,
     payload: {
       authUser,
     },
   };
 }
 
-function unsetAuthActionCreator() {
+function unsetAuthUserActionCreator() {
   return {
-    type: ActionType.UNSET_AUTH,
+    type: ActionType.UNSET_AUTH_USER,
     payload: {
       authUser: null,
     },
   };
 }
 
-function asyncSetAuth({ email, password }) {
+function asyncSetAuthUser({ email, password }) {
   return async (dispatch) => {
     try {
       const token = await api.login({ email, password });
       api.putAccessToken(token);
       const authUser = await api.getOwnProfile();
-      dispatch(setAuthActionCreator(authUser));
+
+      dispatch(setAuthUserActionCreator(authUser));
     } catch (err) {
       console.log("error:", err.message);
     }
   };
 }
 
-function asyncUnsetAuth() {
+function asyncUnsetAuthUser() {
   return (dispatch) => {
-    dispatch(unsetAuthActionCreator());
+    dispatch(unsetAuthUserActionCreator());
     api.putAccessToken("");
   };
 }
 
 export {
-  ActionType,
-  setAuthActionCreator,
-  unsetAuthActionCreator,
-  asyncSetAuth,
-  asyncUnsetAuth,
+  setAuthUserActionCreator,
+  unsetAuthUserActionCreator,
+  asyncSetAuthUser,
+  asyncUnsetAuthUser,
 };

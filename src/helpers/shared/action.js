@@ -1,7 +1,8 @@
-import api from "../api/api";
-import { userActionCreator } from "../users/action";
-import { threadsActionCreator } from "../threads/action";
-import { leaderboardActionCreator } from "../leaderboard/action";
+import api from "../api";
+
+import { receiveUsersActionCreator } from "../users/action";
+import { receiveThreadsActionCreator } from "../threads/action";
+import { receiveLeaderboardActionCreator } from "../leaderboard/action";
 
 function asyncPopulate() {
   return async (dispatch) => {
@@ -10,9 +11,9 @@ function asyncPopulate() {
       const threads = await api.getAllThreads();
       const leaderboard = await api.getLeaderboard();
 
-      dispatch(userActionCreator(users));
-      dispatch(threadsActionCreator(threads));
-      dispatch(leaderboardActionCreator(leaderboard));
+      dispatch(receiveUsersActionCreator(users));
+      dispatch(receiveThreadsActionCreator(threads));
+      dispatch(receiveLeaderboardActionCreator(leaderboard));
     } catch (err) {
       console.log("error:", err.message);
     }

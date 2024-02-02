@@ -1,9 +1,9 @@
-import api from "../api/api";
 import ActionType from "../actionTypes";
+import api from "../api";
 
-function threadDetailActionCreator(threadDetail) {
+function receiveThreadDetailActionCreator(threadDetail) {
   return {
-    type: ActionType.THREAD_DETAIL,
+    type: ActionType.RECEIVE_THREAD_DETAIL,
     payload: {
       threadDetail,
     },
@@ -13,6 +13,15 @@ function threadDetailActionCreator(threadDetail) {
 function clearThreadDetailActionCreator() {
   return {
     type: ActionType.CLEAR_THREAD_DETAIL,
+  };
+}
+
+function addThreadCommentActionCreator(comment) {
+  return {
+    type: ActionType.ADD_THREAD_COMMENT,
+    payload: {
+      comment,
+    },
   };
 }
 
@@ -42,15 +51,6 @@ function neutralVoteThreadActionCreator({ threadId, userId }) {
     payload: {
       threadId,
       userId,
-    },
-  };
-}
-
-function addThreadCommentActionCreator(comment) {
-  return {
-    type: ActionType.ADD_THREAD_COMMENT,
-    payload: {
-      comment,
     },
   };
 }
@@ -85,13 +85,13 @@ function neutralVoteCommentActionCreator({ commentId, userId }) {
   };
 }
 
-function asyncThreadDetail(threadId) {
+function asyncReceiveThreadDetail(threadId) {
   return async (dispatch) => {
     dispatch(clearThreadDetailActionCreator());
 
     try {
       const threadDetail = await api.getDetailThread(threadId);
-      dispatch(threadDetailActionCreator(threadDetail));
+      dispatch(receiveThreadDetailActionCreator(threadDetail));
     } catch (err) {
       console.log("error:", err.message);
     }
@@ -141,12 +141,12 @@ function asyncVoteComment({ threadId, commentId, voteType }) {
 }
 
 export {
-  threadDetailActionCreator,
+  receiveThreadDetailActionCreator,
   addThreadCommentActionCreator,
   upVoteThreadActionCreator,
   downVoteThreadActionCreator,
   neutralVoteThreadActionCreator,
-  asyncThreadDetail,
+  asyncReceiveThreadDetail,
   asyncAddThreadComment,
   asyncVoteThread,
   asyncVoteComment,

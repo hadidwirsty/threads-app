@@ -1,20 +1,20 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import authReducer from "./auth/reducer";
+import authUserReducer from "./auth/reducer";
 import usersReducer from "./users/reducer";
 import threadsReducer from "./threads/reducer";
 import threadDetailReducer from "./thread-detail/reducer";
 import leaderboardReducer from "./leaderboard/reducer";
-import isLoadingReducer from "./is-loading/reducer";
+import isPreloadReducer from "./is-preload/reducer";
 
 const store = configureStore({
   reducer: {
-    auth: authReducer,
+    authUser: authUserReducer,
     users: usersReducer,
     threads: threadsReducer,
     threadDetail: threadDetailReducer,
     leaderboard: leaderboardReducer,
-    isLoading: isLoadingReducer,
+    isPreload: isPreloadReducer,
   },
 });
 

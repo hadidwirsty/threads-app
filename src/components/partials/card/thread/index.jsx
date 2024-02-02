@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
 import { HiOutlineChat, HiOutlineClock, HiOutlineUser } from "react-icons/hi";
+import PropTypes from "prop-types";
 
 import { postedAt } from "../../../../utils";
 

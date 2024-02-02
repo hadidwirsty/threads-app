@@ -1,9 +1,9 @@
-import api from "../api/api";
 import ActionType from "../actionTypes";
+import api from "../api";
 
-function threadsActionCreator(threads) {
+function receiveThreadsActionCreator(threads) {
   return {
-    type: ActionType.THREADS,
+    type: ActionType.RECEIVE_THREADS,
     payload: {
       threads,
     },
@@ -30,4 +30,4 @@ function asyncAddThread({ title, body, category }) {
   };
 }
 
-export { threadsActionCreator, asyncAddThread };
+export { receiveThreadsActionCreator, asyncAddThread };
