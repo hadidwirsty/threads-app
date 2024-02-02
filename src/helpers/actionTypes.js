@@ -1,0 +1,37 @@
+const ActionType = {
+  // Authentication
+  SET_AUTH: "SET_AUTH",
+  UNSET_AUTH: "UNSET_AUTH",
+
+  // Users list
+  USERS: "USERS",
+
+  // Threads list
+  THREADS: "RECEIVE_THREADS",
+  ADD_THREADS: "ADD_THREADS",
+
+  // Thread details
+  THREAD_DETAIL: "THREAD_DETAIL",
+  CLEAR_THREAD_DETAIL: "CLEAR_THREAD_DETAIL",
+
+  // Thread comments
+  ADD_THREAD_COMMENT: "ADD_THREAD_COMMENT",
+
+  // Voting on threads
+  UP_VOTE_THREAD: "UP_VOTE_THREAD",
+  DOWN_VOTE_THREAD: "DOWN_VOTE_THREAD",
+  NEUTRAL_VOTE_THREAD: "NEUTRAL_VOTE_THREAD",
+
+  // Voting on comments
+  UP_VOTE_COMMENT: "UP_VOTE_COMMENT",
+  DOWN_VOTE_COMMENT: "DOWN_VOTE_COMMENT",
+  NEUTRAL_VOTE_COMMENT: "NEUTRAL_VOTE_COMMENT",
+
+  // Leaderboard data
+  LEADERBOARD: "LEADERBOARD",
+
+  // UI loading state
+  SET_IS_LOADING: "SET_IS_LOADING",
+};
+
+export default ActionType;
