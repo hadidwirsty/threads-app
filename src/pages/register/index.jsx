@@ -31,27 +31,31 @@ const RegisterPage = () => {
 
   return (
     <LayoutBase>
-      <h2>Register for your account</h2>
       {registerSuccess && <p>Register success! Now you can log in.</p>}
+      <h2 className="text-center">Register for your account</h2>
+      <p className="mt-3 text-center">
+        Already have an account?{" "}
+        <Link to="/login" className="text-link">
+          Log in here
+        </Link>{" "}
+      </p>
       <form
         ref={formRef}
-        className="mx-auto mt-8 flex max-w-md flex-col items-center justify-center gap-y-6"
+        className="mx-auto mt-8 flex max-w-md flex-col items-center justify-center gap-y-3"
         onSubmit={handleRegister}
       >
         <Input
           title="Full name"
           type="text"
-          placeholder="e.g. Guntur hidayat"
+          placeholder="Enter your full name..."
           id="fullNameInput"
         />
-
         <Input
           title="Email address"
           type="email"
-          placeholder="e.g. test@example.com"
+          placeholder="Enter your email..."
           id="emailInput"
         />
-
         <Input
           title="Password"
           type="password"
@@ -59,15 +63,7 @@ const RegisterPage = () => {
           min={6}
           id="passwordInput"
         />
-
         <Button type="submit">Register</Button>
-
-        <p className="mt-3">
-          Already have an account? Log in{" "}
-          <Link to="/login" className="text-link">
-            here
-          </Link>{" "}
-        </p>
       </form>
     </LayoutBase>
   );

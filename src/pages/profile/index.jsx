@@ -30,10 +30,10 @@ const ProfilePage = () => {
 
   return (
     <LayoutBase>
-      <h2>Profile</h2>
+      <h2 className="text-center">Profile</h2>
 
       <div className="mt-8 flex flex-col items-center">
-        <img src={avatar} alt="My avatar" className="mb-3 w-16 rounded-xl" />
+        <img src={avatar} alt="My avatar" className="mb-3 w-16 rounded-full" />
 
         <h2>{name}</h2>
 

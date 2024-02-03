@@ -16,9 +16,9 @@ const ThreadCard = ({
   <Link to={`thread/${id}`}>
     <article
       title={title}
-      className="overflow-hidden rounded-xl border-2 border-dark bg-light hover:border-dashed"
+      className="overflow-hidden rounded-md border border-dark bg-light hover:border-gray-500"
     >
-      <div className="border-b border-dashed border-dark p-5 pb-3">
+      <div className="p-5 pb-3">
         <h2 className="truncate font-medium">{title}</h2>
       </div>
 

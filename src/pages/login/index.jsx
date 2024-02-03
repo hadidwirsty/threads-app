@@ -30,37 +30,28 @@ const LoginPage = () => {
 
   return (
     <LayoutBase>
-      <h2>Log in to your account</h2>
+      <h2 className="text-center">Log in to your account</h2>
       {loginSuccess && <p>Log in success! Now you can interact with others.</p>}
       <form
         ref={formRef}
-        className="mx-auto mt-8 flex max-w-md flex-col items-center justify-center gap-y-6"
+        className="mx-auto mt-16 flex max-w-md flex-col items-center justify-center gap-y-3"
         onSubmit={handleLogin}
       >
+        <Input title={null} type="email" placeholder="Email" id="emailInput" />
         <Input
-          title="Email address"
-          type="email"
-          placeholder="Enter your email"
-          id="emailInput"
-        />
-
-        <Input
-          title="Password"
+          title={null}
           type="password"
-          placeholder="Enter your password"
+          placeholder="Password"
           id="passwordInput"
         />
-
         <Button type="submit">Log in</Button>
-
-        <p className="mt-3">
-          New in here?{" "}
-          <Link to="/register" className="text-link">
-            Register
-          </Link>{" "}
-          now!
-        </p>
       </form>
+      <p className="mt-3 text-center">
+        Don&apos;t have an account yet?{" "}
+        <Link to="/register" className="text-link">
+          Register here!
+        </Link>{" "}
+      </p>
     </LayoutBase>
   );
 };

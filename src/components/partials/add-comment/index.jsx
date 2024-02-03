@@ -24,9 +24,7 @@ const AddComment = ({ onSubmit }) => {
         placeholder="Your comment here... (max. 400 chars)"
         max={400}
       />
-
       <br />
-
       <Button type="submit">Add comment</Button>
     </form>
   );

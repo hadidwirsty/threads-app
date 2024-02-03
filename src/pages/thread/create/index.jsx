@@ -31,27 +31,27 @@ const CreateThreadPage = () => {
   };
 
   return (
-    <LayoutBase>
-      <h2>Create a new thread</h2>
+    <LayoutBase withBackButton>
+      <h2 className="text-center">Create a new thread</h2>
       {showSuccessMessage && (
         <div className="success-message">Success added thread!</div>
       )}
       <form
         ref={formRef}
-        className="mx-auto mt-8 flex max-w-sm flex-col items-center justify-center gap-y-6"
+        className="mx-auto mt-8 flex max-w-sm flex-col items-center justify-center gap-y-3"
         onSubmit={handleSubmit}
       >
         <Input
           title="Title"
           type="text"
-          placeholder="e.g. Hello world!"
+          placeholder="e.g. Actually I am..."
           id="titleInput"
           max={50}
         />
         <Input
           title="Category"
           type="text"
-          placeholder="e.g. technology"
+          placeholder="e.g. secret"
           id="categoryInput"
           max={20}
         />

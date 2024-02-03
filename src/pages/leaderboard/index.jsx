@@ -29,7 +29,7 @@ const LeaderboardPage = () => {
               <img
                 src={avatar}
                 alt={`${name} ava`}
-                className="w-11 rounded-xl"
+                className="w-11 rounded-full"
               />
 
               <h2 className="truncate">{name}</h2>

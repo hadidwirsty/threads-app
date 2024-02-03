@@ -1,4 +1,4 @@
-import { HiArrowDown, HiArrowUp } from "react-icons/hi";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import PropTypes from "prop-types";
 
 const VoteButton = ({ options, onVote, onNeutral, children }) => {
@@ -25,9 +25,9 @@ const VoteButton = ({ options, onVote, onNeutral, children }) => {
       onClick={handleClick}
     >
       {upOrDown === "up" ? (
-        <HiArrowUp className={iconClasses} />
+        <IoIosArrowUp className={iconClasses} />
       ) : (
-        <HiArrowDown className={iconClasses} />
+        <IoIosArrowDown className={iconClasses} />
       )}
       {children}
     </button>

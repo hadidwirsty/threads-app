@@ -7,7 +7,7 @@ const Input = ({ title, type = "text", id, placeholder, min, max }) => (
       <textarea
         id={id}
         rows="4"
-        className="mt-2 w-full"
+        className="mt-2 w-full py-3"
         placeholder={placeholder}
         maxLength={max}
         required
@@ -16,7 +16,7 @@ const Input = ({ title, type = "text", id, placeholder, min, max }) => (
       <input
         type={type}
         id={id}
-        className="mt-2 w-full"
+        className="mt-2 w-full py-3"
         placeholder={placeholder}
         autoComplete="off"
         minLength={min}

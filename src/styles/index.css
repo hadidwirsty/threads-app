@@ -4,8 +4,8 @@
 
 @layer base {
   html {
-    font-family: Rubik, sans-serif;
-    @apply text-dark bg-light-2;
+    font-family: inter, sans-serif;
+    @apply text-dark bg-base;
   }
 
   h1 { @apply text-3xl; }
@@ -26,12 +26,12 @@
 @layer components {
   .button,
   .nav-link {
-    @apply rounded-3xl py-2 px-5 hover:outline-dashed;
+    @apply rounded-3xl py-2 px-5;
   }
 
-  .button { @apply bg-yellow outline rounded-xl outline-dark; }
+  .button { @apply bg-dark text-light rounded-xl hover:bg-opacity-85; }
 
-  .nav-link-active { @apply bg-sky outline outline-dark; }
+  .nav-link-active { @apply bg-dark text-light hover:bg-opacity-85; }
 }
 
 @layer utilities {
@@ -39,5 +39,5 @@
 
   .x-fluid-container { @apply px-8 sm:px-12 md:px-16 lg:px-24 xl:px-36; }
 
-  .text-link { @apply underline decoration-2 underline-offset-2 hover:text-sky; }
+  .text-link { @apply underline decoration-2 hover:text-gray-600; }
 }

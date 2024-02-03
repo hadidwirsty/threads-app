@@ -21,12 +21,22 @@ const LayoutNavBar = () => {
   return (
     <nav className="x-container fixed bottom-0 z-30 w-full border-t-2 border-b-dark bg-light py-5">
       <div className="flex items-center justify-between text-2xl text-dark">
-        <NavItem to="/" title="Home" icon={<HiOutlineHome />} />
+        <NavItem
+          to="/"
+          title="Home"
+          icon={<HiOutlineHome />}
+          activePaths={["/", "/thread/:threadId", "/create-thread"]}
+        />
 
         <NavItem to="/leaderboard" title="Leaderboard" icon={<HiChartBar />} />
 
         {authUser === null ? (
-          <NavItem to="/login" title="Login" icon={<HiOutlineLogin />} />
+          <NavItem
+            to="/login"
+            title="Login"
+            icon={<HiOutlineLogin />}
+            activePaths={["/login", "/register"]}
+          />
         ) : (
           <NavItem to="/profile" title="My profile" icon={<HiOutlineUser />} />
         )}

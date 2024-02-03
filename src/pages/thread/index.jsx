@@ -53,7 +53,7 @@ const ThreadPage = () => {
           <img
             src={owner?.avatar}
             alt={`${owner?.name}'s avatar`}
-            className="w-12 rounded-xl"
+            className="w-12 rounded-full"
           />
 
           <div>
