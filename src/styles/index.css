@@ -40,4 +40,6 @@
   .x-fluid-container { @apply px-8 sm:px-12 md:px-16 lg:px-24 xl:px-36; }
 
   .text-link { @apply underline decoration-2 hover:text-gray-600; }
+
+  .loading { @apply fixed w-full top-0 z-40;}
 }

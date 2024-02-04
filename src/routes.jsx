@@ -28,6 +28,7 @@ const AppRoute = () => {
 
   return (
     <Suspense fallback={<LoadingIndicator />}>
+      <LoadingIndicator />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
