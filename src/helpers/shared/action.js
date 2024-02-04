@@ -1,3 +1,4 @@
+import { showLoading, hideLoading } from "react-redux-loading-bar";
 import api from "../api";
 
 import { receiveUsersActionCreator } from "../users/action";
@@ -6,6 +7,8 @@ import { receiveLeaderboardActionCreator } from "../leaderboard/action";
 
 function asyncPopulate() {
   return async (dispatch) => {
+    dispatch(showLoading());
+
     try {
       const users = await api.getAllUsers();
       const threads = await api.getAllThreads();
@@ -16,6 +19,8 @@ function asyncPopulate() {
       dispatch(receiveLeaderboardActionCreator(leaderboard));
     } catch (err) {
       console.log("error:", err.message);
+    } finally {
+      dispatch(hideLoading());
     }
   };
 }

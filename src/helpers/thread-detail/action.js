@@ -1,3 +1,4 @@
+import { showLoading, hideLoading } from "react-redux-loading-bar";
 import ActionType from "../actionTypes";
 import api from "../api";
 
@@ -88,29 +89,38 @@ function neutralVoteCommentActionCreator({ commentId, userId }) {
 function asyncReceiveThreadDetail(threadId) {
   return async (dispatch) => {
     dispatch(clearThreadDetailActionCreator());
+    dispatch(showLoading());
 
     try {
       const threadDetail = await api.getDetailThread(threadId);
       dispatch(receiveThreadDetailActionCreator(threadDetail));
     } catch (err) {
       console.log("error:", err.message);
+    } finally {
+      dispatch(hideLoading());
     }
   };
 }
 
 function asyncAddThreadComment(content, threadId) {
   return async (dispatch) => {
+    dispatch(showLoading());
+
     try {
       const comment = await api.createComment(content, threadId);
       dispatch(addThreadCommentActionCreator(comment));
     } catch (err) {
       console.log("error:", err.message);
+    } finally {
+      dispatch(hideLoading());
     }
   };
 }
 
 function asyncVoteThread({ threadId, voteType }) {
   return async (dispatch) => {
+    dispatch(showLoading());
+
     try {
       const vote = await api.addThreadVote(threadId, voteType);
 
@@ -120,12 +130,16 @@ function asyncVoteThread({ threadId, voteType }) {
         dispatch(neutralVoteThreadActionCreator(vote));
     } catch (err) {
       console.log("error:", err.message);
+    } finally {
+      dispatch(hideLoading());
     }
   };
 }
 
 function asyncVoteComment({ threadId, commentId, voteType }) {
   return async (dispatch) => {
+    dispatch(showLoading());
+
     try {
       const vote = await api.addCommentVote(threadId, commentId, voteType);
 
@@ -136,6 +150,8 @@ function asyncVoteComment({ threadId, commentId, voteType }) {
         dispatch(neutralVoteCommentActionCreator(vote));
     } catch (err) {
       console.log("error", err.message);
+    } finally {
+      dispatch(hideLoading());
     }
   };
 }

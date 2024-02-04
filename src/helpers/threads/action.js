@@ -1,3 +1,4 @@
+import { showLoading, hideLoading } from "react-redux-loading-bar";
 import ActionType from "../actionTypes";
 import api from "../api";
 
@@ -21,11 +22,15 @@ function addThreadActionCreator(threads) {
 
 function asyncAddThread({ title, body, category }) {
   return async (dispatch) => {
+    dispatch(showLoading());
+
     try {
       const threads = await api.createThread({ title, body, category });
       dispatch(addThreadActionCreator(threads));
     } catch (err) {
       console.log("error:", err.message);
+    } finally {
+      dispatch(hideLoading());
     }
   };
 }
